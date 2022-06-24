@@ -1,4 +1,4 @@
-export const APP_ID = "99999999-9999-9999-9999-999999999999";  // Application ID.
+export const APP_ID = "APP_ID";  // Application ID.
 export const ENABLE_MEASURE_ENV = true;  // Whether analyze measurement environment or not.
 export const ENABLE_FACE = true;  // Whether detect face or not.
 export const ENABLE_REMOTE_HR = true;  // Whether estimate remote hr or not.
