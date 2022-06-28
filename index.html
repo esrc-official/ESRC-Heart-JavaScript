@@ -38,20 +38,44 @@
 
         <div class="contents">
             <div class="desc">
-                Start bio-analysis on ESRC by using your webcam.
-                <br> This show how ESRC Heart works with face detection, heart rate estimation, heart rate variability analysis and engagement recognition.
+                Start bio-analysis on ESRC Heart by using your webcam.
+                <br> This show how ESRC Heart works with face detection, heart rate estimation, heart rate variability analysis and
+                engagement recognition.
                 <div class="download">
-                    <a href="https://github.com/esrc-official/ESRC-Heart-JavaScript/" target="blank" class="download-sample">Download Sample</a>
+                    <a href="https://github.com/esrc-official/ESRC-Heart-JavaScript/" target="blank"
+                        class="download-sample">Download Sample</a>
                 </div>
             </div>
             <div class="form">
                 <video id="video" width="640" height="480"></video>
-                <!-- <canvas id="canvas" width="640" height="480"></canvas> -->
-                <p class="result" id="face">Face</p>
-                <p class="result" id="remoteHR">HR</p>
-                <p class="result" id="sdnn">HRV(SDNN)</p>
-                <p class="result" id="vlflfhf">HRV(VLF, LF, HF)</p>
-                <p class="result" id="engagement">Engagement</p>
+                <div class="upper-line-container">
+                    <div class="card-container" id="face-container">
+                        <div class="title-box">Face</div>
+                        <div class="value-box" id="face-value">NONE</div>
+                    </div>
+                    <div class="card-container" id="hr-container">
+                        <div class="title-box">HR</div>
+                        <div class="value-box" id="hr-value">0 bpm (0%)</div>
+                    </div>
+                    <div class="card-container" id="hrv-sdnn-container">
+                        <div class="title-box">HRV(SDNN)</div>
+                        <div class="value-box" id="hrv-sdnn-value">0 ms (0%)</div>
+                    </div>
+                </div>
+                <div class="under-line-condainer">
+                    <div class="card-container" id="hrv-lnlf-container">
+                        <div class="title-box">HRV(lnLF)</div>
+                        <div class="value-box" id="hrv-lnlf-value">0 ms2 (0%)</div>
+                    </div>
+                    <div class="card-container" id="hrv-lnhf-container">
+                        <div class="title-box">HRV(lnHF)</div>
+                        <div class="value-box" id="hrv-lnhf-value">0 ms2 (0%)</div>
+                    </div>
+                    <div class="card-container" id="engagement-container">
+                        <div class="title-box">Engagement</div>
+                        <div class="value-box" id="engagement-value">NONE</div>
+                    </div>
+                </div>
                 <button type="button" class="button" id="start-stop-button">START</button>
             </div>
         </div>

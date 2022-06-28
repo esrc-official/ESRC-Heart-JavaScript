@@ -47,23 +47,23 @@ class ESRCAction {
                     ESRCAction.getInstance().face.setFace(_face);
                 }
                 this.handler.didChangedProgressRatioOnRemoteHR = function(_progressRatio) {
-                    console.log("didChangedProgressRatioOnRemoteHR: " + _progressRatio.toString());
+                    // console.log("didChangedProgressRatioOnRemoteHR: " + _progressRatio.toString());
                     ESRCAction.getInstance().progressRatioOnRemoteHR.setProgressRatio(_progressRatio);
                 }
                 this.handler.onEstimatedRemoteHR = function(_remoteHR) {
-                    console.log("onEstimatedRemoteHR: " + _remoteHR.toString());
+                    // console.log("onEstimatedRemoteHR: " + _remoteHR.toString());
                     ESRCAction.getInstance().remoteHR.setRemoteHR(_remoteHR)
                 }
                 this.handler.didChangedProgressRatioOnHRV = function(_progressRatio) {
-                    console.log("didChangedProgressRatioOnHRV: " + _progressRatio.toString());
+                    // console.log("didChangedProgressRatioOnHRV: " + _progressRatio.toString());
                     ESRCAction.getInstance().progressRatioOnHRV.setProgressRatio(_progressRatio);
                 }
                 this.handler.onAnalyzedHRV = function(_hrv) {
-                    console.log("onAnalyzedHRV: " + _hrv.toString());
+                    // console.log("onAnalyzedHRV: " + _hrv.toString());
                     ESRCAction.getInstance().hrv.setHRV(_hrv);
                 }
                 this.handler.onRecognizedEngagement = function(_engagement) {
-                    console.log("onRecognizedEngagement: " + _engagement.toString());
+                    // console.log("onRecognizedEngagement: " + _engagement.toString());
                     ESRCAction.getInstance().engagement.setEngagement(_engagement);
                 }
 
@@ -73,7 +73,7 @@ class ESRCAction {
             }
         });
     }
-
+    
     start() {
         this.measureEnv = new ESRCType.ESRCMeasureEnv();
         this.face = new ESRCType.ESRCFace();

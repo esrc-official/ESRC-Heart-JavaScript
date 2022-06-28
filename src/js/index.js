@@ -1,12 +1,10 @@
 const { body } = require("./const")
 const { ESRCAction } = require("./ESRCAction");
 const { Camera } = require("./components/Camera");
-// const { Canvas } = require("./components/Canvas");
 const { Spinner } = require("./components/Spinner");
 
 const esrc = new ESRCAction();
 const camera = new Camera();
-// const canvas = new Canvas();
 let isRunning = false;
 
 // Start spinner
@@ -80,11 +78,12 @@ function start() {
         }
         
         // Draw
-        document.getElementById("face").innerHTML = "Face=" + esrc.face.getIsDetect();
-        document.getElementById("remoteHR").innerHTML = "HR=" + Math.round(esrc.remoteHR.getHR()) + " bpm" + " (" + Math.floor(esrc.progressRatioOnRemoteHR.getProgress()) + "%)";
-        document.getElementById("sdnn").innerHTML = "HRV(SDNN)=" + Math.round(esrc.hrv.getSdnn() * 100) / 100 + " ms2" + " (" + Math.floor(esrc.progressRatioOnHRV.getProgress()) + "%)";
-        document.getElementById("vlflfhf").innerHTML = "HRV(VLF, LF, HF)=" + Math.round(esrc.hrv.getLnVlf() * 100) / 100 + ", " + Math.round(esrc.hrv.getLnLf() * 100) / 100 + ", " + Math.round(esrc.hrv.getLnHf() * 100) / 100 + " ms" + " (" + Math.floor(esrc.progressRatioOnHRV.getProgress()) + "%)";
-        document.getElementById("engagement").innerHTML = "Engagement=" + esrc.engagement.getEmotion();
+        document.getElementById("face-value").innerHTML = esrc.face.getDetectStr();
+        document.getElementById("hr-value").innerHTML = Math.round(esrc.remoteHR.getHR()) + " bpm" + " (" + Math.floor(esrc.progressRatioOnRemoteHR.getProgress()) + "%)";
+        document.getElementById("hrv-sdnn-value").innerHTML = Math.round(esrc.hrv.getSdnn() * 100) / 100 + " ms" + " (" + Math.floor(esrc.progressRatioOnHRV.getProgress()) + "%)";
+        document.getElementById("hrv-lnlf-value").innerHTML = Math.round(esrc.hrv.getLnLf() * 100) / 100 + " ms2" + " (" + Math.floor(esrc.progressRatioOnHRV.getProgress()) + "%)";
+        document.getElementById("hrv-lnhf-value").innerHTML = Math.round(esrc.hrv.getLnHf() * 100) / 100 + " ms2" + " (" + Math.floor(esrc.progressRatioOnHRV.getProgress()) + "%)";
+        document.getElementById("engagement-value").innerHTML = esrc.engagement.getEmotionStr();
     });
 }
 
